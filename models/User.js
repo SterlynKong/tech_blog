@@ -35,7 +35,13 @@ User.init(
         hooks: {
             // use lifecycle hook 'beforeCreate' bcrypt method to encrypt password prior to storing
             async beforeCreate(newUserData) {
-                newUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+                newUserData.password = await bcrypt.hash(newUserData.password, 10);
+                return newUserData;
+            },
+
+            // use lifecycle hook 'beforeUpdate' bcrypt method to encrypt password prior to storing
+            async beforeUpdate(updatedUserData) {
+                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
                 return updatedUserData;
             }
         },
