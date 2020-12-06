@@ -1,3 +1,4 @@
+// requirements
 const { Sequelize, Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -7,8 +8,12 @@ class Post extends Model {}
 // define structure of Post
 Post.init(
     {
-        title: DataTypes.STRING,
-        body: DataTypes.STRING,
+        title: {
+            type: DataTypes.STRING
+        },
+        body: {
+            type: DataTypes.STRING
+        }
     },
     {
         sequelize
