@@ -16,6 +16,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // create instance of handlebars
 const hbs = exphbs.create({
+    extname: '.hbs',
     // new helper for date formatting
     helpers: {
         format_date: date => {
@@ -36,13 +37,13 @@ const sess = {
 };
 
 // register hbs.engine with express app
-app.engine('handlebars', hbs.engine);
+app.engine('hbs', hbs.engine);
 
 // use handlebars engine
-app.set('view engine', 'handlebars');
+app.set('view engine', 'hbs');
 
 // call express json method as middleware to recognize the incoming Request Object as a JSON Object
-app.use(express.json()); 
+app.use(express.json());
 
 // call express method to recognize the incoming Request Object as strings or arrays
 app.use(express.urlencoded({ extended: false }));
