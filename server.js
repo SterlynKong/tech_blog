@@ -16,6 +16,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // create instance of handlebars
 const hbs = exphbs.create({
+    // new helper for date formatting
     helpers: {
         format_date: date => {
             return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
@@ -25,7 +26,7 @@ const hbs = exphbs.create({
 
 // express session
 const sess = {
-    secret: process.env.SESSION_SECRET,
+    secret: "AmAzInG$af3",
     cookie: {},
     resave: false,
     saveUninitialized: false,
@@ -36,15 +37,26 @@ const sess = {
 
 // register hbs.engine with express app
 app.engine('handlebars', hbs.engine);
+
+// use handlebars engine
 app.set('view engine', 'handlebars');
 
-app.use(express.json());
+// call express json method as middleware to recognize the incoming Request Object as a JSON Object
+app.use(express.json()); 
+
+// call express method to recognize the incoming Request Object as strings or arrays
 app.use(express.urlencoded({ extended: false }));
-app.use(express.statis(path.join(__dirname, 'public')));
+
+// tell express to make public folder statically served
+app.use(express.static(path.join(__dirname, 'public')));
+
+// set up express to use sess parameters we declared in sess above
 app.use(session(sess));
 
+// require and use controllers
 app.use(require('./controllers/'));
 
+// ORM sync to DB
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Now listening on ${PORT}`))
 });
