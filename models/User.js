@@ -14,17 +14,17 @@ class User extends Model {
 User.init(
     {
         id: {
-            type: DateTypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
         },
         username: {
-            type: DateTypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         password: {
-            type: DateTypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [4]

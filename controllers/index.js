@@ -1,19 +1,17 @@
 // require express router method
 const router = require("express").Router();
 
-// require User routes
-const userRoutes = require('./user-routes.js');
+// require api routes
+const apiRoutes = require('./api/');
 
-// require Post routes
-const postRoutes = require('./post-routes');
+// require home-routes
+const homeRoutes = require('./home-routes');
 
-// require Comment routes
-const commentRoutes = require('./comment-routes');
+// require dashboard routes
+const dashboardRoutes = require('./dashboard-routes');
 
-// set up routers (URL segments) for routes
-router.use('/user', userRoutes);
-router.use('/post', postRoutes);
-router.use('/comment', commentRoutes);
-
+router.use('/', homeRoutes);
+router.use('/dashboard', dashboardRoutes);
+router.use('/api', apiRoutes);
 
 module.exports = router;

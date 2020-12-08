@@ -2,7 +2,7 @@
 const router = require("express").Router();
 
 // require user routes
-const userRoutes = require('./user-routes.js');
+const userRoutes = require('./user-routes');
 
 // require post routes
 const postRoutes = require('./post-routes');
