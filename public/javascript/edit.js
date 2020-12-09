@@ -5,11 +5,11 @@ const editFormHandler = async function (event) {
     event.preventDefault();
 
     // get form values for POST to endpoint
-    const postId = document.querySelector('input[name="post-title"]').value;
-    const body = document.querySelector('textarea[name="post-body"]').value;
+    const title = document.querySelector('input[name="post-title"]').value;
+    const body = document.querySelector('input[name="post-body"]').value;
 
     // send update request to endpoint
-    await fetch(`api/post/${postId}`, {
+    await fetch(`/api/post/${postId}`, {
         method: 'PUT',
         body: JSON.stringify({
             title,
@@ -27,6 +27,7 @@ const deleteClickHandler = async function () {
     await fetch(`/api/post/${postId}`, {
         method: 'DELETE'
     });
+    document.location.replace('/dashboard');
 };
 
 

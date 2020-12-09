@@ -28,7 +28,7 @@ router.get("/new", withAuth, (req, res) => {
     });
 });
 
-router.get("edit/:id", withAuth, (req, res) => {
+router.get("/edit/:id", withAuth, (req, res) => {
     Post.findByPk(req.params.id)
         .then(dbPostData => {
             if (dbPostData) {

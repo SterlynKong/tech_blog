@@ -19,7 +19,7 @@ router.get("/", (req, res) => {
 });
 
 // GET route for a single post (by ID)
-router.get("post/:id", (req, res) => {
+router.get("/post/:id", (req, res) => {
     Post.findByPk(req.params.id, {
         include: [
             User,

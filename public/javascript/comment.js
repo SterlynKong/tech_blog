@@ -8,7 +8,7 @@ const commentFormHandler = async function (event) {
 
     // validate that the post content is not empty then send to endpoint
     if (body) {
-        await fetch('api/comment', {
+        await fetch('/api/comment', {
             method: 'POST',
             body: JSON.stringify({
                 postId,
