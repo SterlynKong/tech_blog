@@ -61,7 +61,7 @@
 
 
   ## Image:
-  ![tech-blog screenshot](/images/tech_blog_ss.png "tech-blog screenshot")
+  ![tech-blog screenshot](/images/tech_blog_ss_1.png "tech-blog screenshot")
 
 
   ## Contributing:
