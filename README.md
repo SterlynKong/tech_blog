@@ -3,7 +3,7 @@
 
   ## Description:
   A tech-news blog site containing interesting posts.
-  Users resgiter for a free account.
+  Users can register for a free account.
   Once logged in, a user can create, edit and delete their own posts and they can comment on posts belonging to others.
 
   ## Technologies
