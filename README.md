@@ -4,7 +4,7 @@
   ## Description:
   A tech-news blog site containing interesting posts.
   Users can register for a free account.
-  Once logged in, a user can create, edit and delete their own posts and they can comment on posts belonging to others.
+  Once logged in, a user can create, edit and delete comment on posts.
 
   ## Technologies
   - Node.js
@@ -57,7 +57,7 @@
 
 
   ## URL:
-  N/A
+  https://tek-spot.herokuapp.com/login
 
 
   ## Image:
